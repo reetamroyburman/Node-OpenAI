@@ -22,7 +22,10 @@ app.get('/getResponse', async (req, res) => {
             messages: [{ role: 'user', content: input }],
             model: 'gpt-3.5-turbo',
         });
-        res.json({Ques:req.body.prompt,Ans:response.choices[0].message.content});
+        res.json({
+            Ques:req.body.prompt,
+            Ans:response.choices[0].message.content
+        });
 
     } catch (error) {
         console.error('Error:', error.message);
